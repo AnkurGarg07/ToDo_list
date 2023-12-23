@@ -64,6 +64,7 @@ function loadTasks() {
 
 // Save tasks to localStorage
 function saveTasks() {
+  localStorage.removeItem("tasks");
   localStorage.setItem("tasks", taskList.innerHTML);
 }
 
@@ -86,10 +87,12 @@ taskList.addEventListener("click", function (event) {
   } else {
     clickedElement.classList.toggle("checked");
   }
+  saveTasks();
 
   if (clickedElement.tagName === "SPAN") {
     // Remove the parent li when the delete button is clicked
     const liToRemove = clickedElement.parentNode;
     liToRemove.remove();
+    saveTasks();
   }
 });
