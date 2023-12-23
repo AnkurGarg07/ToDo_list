@@ -104,8 +104,8 @@ ul li {
   transition: all 0.3s linear;
 }
 
-ul li:hover{
-  background-color: rgba(255,255,255,0.25);
+ul li:hover {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 ul li::before {
@@ -124,7 +124,7 @@ ul li::before {
 ul .task.checked .task-text {
   opacity: 0.8;
   font-size: 20px;
-  color: #555;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 ul li.checked::before {
@@ -189,7 +189,8 @@ footer a {
   margin-left: 8px;
   text-decoration: none;
 }
-footer a:hover{
+
+footer a:hover {
   text-decoration: underline;
 }
 
@@ -200,6 +201,18 @@ footer a:hover{
 
   .container {
     height: 65vh;
+  }
+
+  ul li::before {
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+    content: '🔲';
+  }
+
+  ul li.checked::before {
+    opacity: 1;
+    mix-blend-mode: normal;
+    content: '✅';
   }
 }
 
@@ -227,11 +240,10 @@ footer a:hover{
   ul .task.checked .task-text {
     font-size: 18px;
   }
-
 }
 
-@media(width<375px){
-  footer{
+@media(width<375px) {
+  footer {
     font-size: 20px;
   }
 }
