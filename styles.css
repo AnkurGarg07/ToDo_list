@@ -5,11 +5,17 @@
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar {
   width: 5px;
+  display: none;
 }
+
 ::-webkit-scrollbar-track {
   background: #d1e5ff;
+} */
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .main {
@@ -95,17 +101,22 @@ ul li {
   display: flex;
   justify-content: space-between;
   line-height: 25px;
+  transition: all 0.3s linear;
+}
+
+ul li:hover{
+  background-color: rgba(255,255,255,0.25);
 }
 
 ul li::before {
-  content: "";
+  content: '☐';
   position: absolute;
   width: 20px;
   height: 20px;
+  font-size: 22px;
   border-radius: 50%;
   top: 13px;
   margin-left: -36px;
-  background-image: url(assets/unchecked.png);
   background-size: cover;
   background-position: center;
 }
@@ -117,7 +128,7 @@ ul .task.checked .task-text {
 }
 
 ul li.checked::before {
-  background-image: url(assets/checked.png);
+  content: '🗹';
 }
 
 ul .task .cross {
@@ -145,21 +156,26 @@ input[type="text"] {
   margin: 10px;
   padding: 10px;
   width: 80%;
-  border: 1px solid black;
   font-size: 20px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
 }
 
+
 .addIcon {
-  width: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .addIcon i {
   font-size: 38px;
   cursor: pointer;
+  overflow: hidden;
 }
+
 
 footer {
   display: flex;
@@ -167,39 +183,53 @@ footer {
   padding: 15px;
   font-size: 25px;
 }
-footer a{
+
+footer a {
   color: black;
   margin-left: 8px;
+  text-decoration: none;
+}
+footer a:hover{
+  text-decoration: underline;
 }
 
-@media(width<768px){
-  .main{
+@media(width<768px) {
+  .main {
     justify-content: flex-start;
   }
-  .container{
+
+  .container {
     height: 65vh;
   }
 }
-@media(width<468px){
-  .main{
+
+@media(width<468px) {
+  .main {
     padding: unset;
   }
-  .todo{
+
+  .todo {
     width: 100vw;
   }
-  .header{
+
+  .header {
     border-radius: unset;
   }
-  .addTask{
+
+  .addTask {
     border-radius: unset;
   }
-  .task-text{
+
+  .task-text {
     font-size: 18px;
   }
-  ul .task.checked .task-text{
+
+  ul .task.checked .task-text {
     font-size: 18px;
   }
+
 }
+
 @media(width<375px){
   footer{
     font-size: 20px;
