@@ -2,12 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #d1e5ff;
 }
 
 .main {
-  width: 100vw;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 15px 0px;
@@ -19,7 +27,7 @@
   width: 400px;
   flex-direction: column;
   align-items: center;
-  filter: drop-shadow(10px 4px 14px rgba(139,151,172,0.6));
+  filter: drop-shadow(10px 4px 14px rgba(139, 151, 172, 0.6));
 }
 
 .header {
@@ -55,10 +63,10 @@
 
 .container {
   width: 100%;
-  height: 100%;
+  max-height: 70vh;
   background-color: #a2d2ff;
   padding: 15px 0px;
-  
+
 }
 
 .tasklist {
@@ -86,6 +94,7 @@ ul li {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  line-height: 25px;
 }
 
 ul li::before {
@@ -136,6 +145,8 @@ input[type="text"] {
   margin: 10px;
   padding: 10px;
   width: 80%;
+  border: 1px solid black;
+  font-size: 20px;
 }
 
 .addIcon {
@@ -146,6 +157,52 @@ input[type="text"] {
 }
 
 .addIcon i {
-  font-size: 40px;
+  font-size: 38px;
   cursor: pointer;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  font-size: 25px;
+}
+footer img {
+  width: 30px;
+  margin: 0px 8px;
+}
+footer a{
+  color: black;
+  margin-left: 8px;
+}
+
+@media(width<768px){
+  .main{
+    justify-content: flex-start;
+  }
+  .container{
+    height: 65vh;
+  }
+}
+@media(width<468px){
+  .main{
+    padding: unset;
+  }
+  .todo{
+    width: 100vw;
+  }
+  .header{
+    border-radius: unset;
+  }
+  .addTask{
+    border-radius: unset;
+  }
+  .task-text{
+    font-size: 18px;
+  }
+}
+@media(width<375px){
+  footer{
+    font-size: 20px;
+  }
 }

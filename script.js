@@ -27,7 +27,6 @@ currentDate.appendChild(
   document.createTextNode(day + "/" + month + "/" + year)
 );
 currentDay.appendChild(document.createTextNode(dayOfWeek));
-console.log("Current Day:", dayOfWeek);
 
 //function to add task
 function addTask() {
@@ -39,9 +38,9 @@ function addTask() {
     //creating a div
     div = document.createElement("div");
     div.classList.add("task-text");
-    div.innerHTML=inputText.value;
+    div.innerHTML = inputText.value;
     li.appendChild(div);
-    //Creating a span 
+    //Creating a span
     span = document.createElement("span");
     span.classList.add("cross");
     span.innerHTML = "&#10006;"; // Unicode character for "X"
@@ -63,13 +62,10 @@ inputText.addEventListener("keyup", function (e) {
 
 taskList.addEventListener("click", function (event) {
   const clickedElement = event.target;
-  console.log(clickedElement);
   // Toggle the "checked" class on the clicked li element
- 
-
-  if(clickedElement.classList.contains("task-text")){
+  if (clickedElement.classList.contains("task-text")) {
     clickedElement.parentNode.classList.toggle("checked");
-  }else{
+  } else {
     clickedElement.classList.toggle("checked");
   }
 
@@ -79,5 +75,3 @@ taskList.addEventListener("click", function (event) {
     liToRemove.remove();
   }
 });
-
-
