@@ -19,7 +19,7 @@
   width: 400px;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  filter: drop-shadow(10px 4px 14px rgba(139,151,172,0.6));
 }
 
 .header {
@@ -29,12 +29,12 @@
   justify-content: center;
   padding: 10px 0px;
   background-color: #ffafcc;
+  border-radius: 15px 15px 0px 0px;
 }
 
 .logo img {
   width: 70px;
   padding: 3px;
-
 }
 
 .dates {
@@ -57,6 +57,8 @@
   width: 100%;
   height: 100%;
   background-color: #a2d2ff;
+  padding: 15px 0px;
+  
 }
 
 .tasklist {
@@ -68,9 +70,10 @@
 .task-text {
   color: black;
   font-size: 20px;
+  overflow-wrap: anywhere;
 }
 
-.task.checked .task-text{
+.task.checked .task-text {
   text-decoration: line-through;
 }
 
@@ -82,6 +85,7 @@ ul li {
   font-size: 22px;
   cursor: pointer;
   display: flex;
+  justify-content: space-between;
 }
 
 ul li::before {
@@ -109,15 +113,14 @@ ul li.checked::before {
 
 ul .task .cross {
   font-size: 22px;
-  /* position: absolute;
-  top: 9px;
-  right: 15px; */
   color: red;
   width: 30px;
   height: 30px;
   text-align: center;
   transition: 0.1s linear;
   border-radius: 50%;
+  padding-inline: 10px;
+  padding-right: 30px;
 }
 
 .addTask {
@@ -125,6 +128,8 @@ ul .task .cross {
   display: flex;
   justify-content: center;
   background-color: #bde0fe;
+  border-radius: 0px 0px 15px 15px;
+  padding: 10px 0px;
 }
 
 input[type="text"] {
