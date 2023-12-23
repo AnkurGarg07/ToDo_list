@@ -3,7 +3,10 @@ const button = document.querySelector(".addIcon");
 let taskList = document.querySelector(".taskList");
 let currentDay = document.querySelector(".currentDay");
 let currentDate = document.querySelector(".currentDate");
-let li, span;
+let li, span,div;
+document.addEventListener("DOMContentLoaded", function () {
+  loadTasks();
+});
 
 // Create a new Date object
 var Date = new Date();
@@ -48,8 +51,23 @@ function addTask() {
     taskList.appendChild(li);
     // console.log(li);
     inputText.value = "";
+    saveTasks();
   }
 }
+// Load tasks from localStorage
+function loadTasks() {
+  const savedTasks = localStorage.getItem("tasks");
+  if (savedTasks) {
+    taskList.innerHTML = savedTasks;
+  }
+}
+
+// Save tasks to localStorage
+function saveTasks() {
+  localStorage.setItem("tasks", taskList.innerHTML);
+}
+
+
 //New task is added when clicked on plus icon
 button.addEventListener("click", addTask);
 inputText.addEventListener("keyup", function (e) {
