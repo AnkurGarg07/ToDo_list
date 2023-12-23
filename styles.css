@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: #fefefa; */
 }
+
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -13,12 +13,15 @@
   padding: 15px 0px;
   background-color: #cdb4db;
 }
+
 .todo {
-  width: 30vw;
+  /* width: 30vw; */
+  width: 400px;
   flex-direction: column;
   align-items: center;
   border: 2px solid black;
 }
+
 .header {
   width: 100%;
   border-bottom: 2px solid black;
@@ -27,11 +30,13 @@
   padding: 10px 0px;
   background-color: #ffafcc;
 }
-.logo img{
-   width: 70px;
-    padding: 3px;
+
+.logo img {
+  width: 70px;
+  padding: 3px;
 
 }
+
 .dates {
   display: flex;
   flex-direction: column;
@@ -39,9 +44,11 @@
   align-items: center;
   padding: 10px;
 }
+
 .currentDay {
   font-size: 24px;
 }
+
 .currentDate {
   padding: 5px;
 }
@@ -51,6 +58,22 @@
   height: 100%;
   background-color: #a2d2ff;
 }
+
+.tasklist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-text {
+  color: black;
+  font-size: 20px;
+}
+
+.task.checked .task-text{
+  text-decoration: line-through;
+}
+
 ul li {
   list-style: none;
   position: relative;
@@ -58,7 +81,9 @@ ul li {
   padding: 12px 8px 12px 50px;
   font-size: 22px;
   cursor: pointer;
+  display: flex;
 }
+
 ul li::before {
   content: "";
   position: absolute;
@@ -71,29 +96,28 @@ ul li::before {
   background-size: cover;
   background-position: center;
 }
-ul li.checked{
-  text-decoration: line-through;
+
+ul .task.checked .task-text {
   opacity: 0.8;
   font-size: 20px;
   color: #555;
 }
-ul li.checked::before{
+
+ul li.checked::before {
   background-image: url(assets/checked.png);
 }
-ul li span{
-    font-size: 22px;
-    position: absolute;
-    top: 9px;
-    right: 15px;
-    color: red;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    transition:  0.1s linear;
-    border-radius: 50%;
-}
-ul li span:hover{
-  background-color: black;
+
+ul .task .cross {
+  font-size: 22px;
+  /* position: absolute;
+  top: 9px;
+  right: 15px; */
+  color: red;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  transition: 0.1s linear;
+  border-radius: 50%;
 }
 
 .addTask {
@@ -102,17 +126,20 @@ ul li span:hover{
   justify-content: center;
   background-color: #bde0fe;
 }
+
 input[type="text"] {
   margin: 10px;
   padding: 10px;
   width: 80%;
 }
+
 .addIcon {
   width: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .addIcon i {
   font-size: 40px;
   cursor: pointer;
