@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #fefefa;
+  /* background-color: #fefefa; */
 }
 .main {
   width: 100vw;
@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   padding: 15px 0px;
+  background-color: #cdb4db;
 }
 .todo {
   width: 30vw;
@@ -21,6 +22,15 @@
 .header {
   width: 100%;
   border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+  background-color: #ffafcc;
+}
+.logo img{
+   width: 70px;
+    padding: 3px;
+
 }
 .dates {
   display: flex;
@@ -39,6 +49,7 @@
 .container {
   width: 100%;
   height: 100%;
+  background-color: #a2d2ff;
 }
 ul li {
   list-style: none;
@@ -89,6 +100,7 @@ ul li span:hover{
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: #bde0fe;
 }
 input[type="text"] {
   margin: 10px;

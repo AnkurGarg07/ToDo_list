@@ -31,6 +31,10 @@ console.log("Current Day:", dayOfWeek);
 
 //function to add task
 function addTask(){
+  if(inputText.value==''){
+    alert("Add some task ");
+  }
+  else{
     li = document.createElement("li");
     li.classList.add("task");
     li.innerHTML = inputText.value;
@@ -40,6 +44,7 @@ function addTask(){
     li.appendChild(span);
     taskList.appendChild(li);
     inputText.value = "";
+  }
 }
 //New task is added when clicked on plus icon
 button.addEventListener('click',addTask);
